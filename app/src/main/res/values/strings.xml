@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">RSA Tool</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="main_title_selector_public">公钥</string>
+    <string name="main_title_selector_private">私钥</string>
+    <string name="main_title_input_text_source">待加密/解密的文本</string>
+    <string name="main_button_encrypt">加密</string>
+    <string name="main_button_decrypt">解密</string>
+    <string name="main_title_input_text_target">加密/解密后的文本</string>
+
+    <!-- first run dialog -->
+    <string name="dialog_first_run_title">使用说明</string>
+    <string name="dialog_first_run_content">我是使用说明哦</string>
+    <string name="dialog_first_run_checkbox">不再显示</string>
+    <string name="dialog_first_run_button">好的</string>
+
+    <!-- add key public dialog-->
+    <string name="dialog_add_key_public_title">添加公钥</string>
+    <string name="dialog_add_key_public_description">添加他人的公钥</string>
+    <string name="dialog_add_key_public_name">别名</string>
+    <string name="dialog_add_key_public_key">公钥</string>
+    <string name="dialog_add_key_public_button_confirm">添加</string>
+    <string name="dialog_add_key_public_button_cancel">关闭</string>
+    <string name="dialog_add_key_public_fail">请填写完整</string>
+    <string name="dialog_add_key_public_exists">别名已存在</string>
+    <string name="dialog_add_key_public_success">添加成功</string>
+
+    <!-- add key private dialog-->
+    <string name="dialog_add_key_private_title">添加私钥</string>
+    <string name="dialog_add_key_private_description">添加自己的私钥</string>
+    <string name="dialog_add_key_private_name">别名</string>
+    <string name="dialog_add_key_private_key">私钥</string>
+    <string name="dialog_add_key_private_with_public">自动添加对应公钥</string>
+    <string name="dialog_add_key_private_button_confirm">添加</string>
+    <string name="dialog_add_key_private_button_cancel">关闭</string>
+    <string name="dialog_add_key_private_fail">请填写完整</string>
+    <string name="dialog_add_key_private_exists">别名已存在</string>
+    <string name="dialog_add_key_private_success">添加成功</string>
+
+    <!-- create key dialog -->
+    <string name="dialog_create_key_title">创建密钥对</string>
+    <string name="dialog_create_key_description">生成新的密钥对</string>
+    <string name="dialog_create_key_name">别名</string>
+    <string name="dialog_create_key_button_create">生成</string>
+    <string name="dialog_create_key_button_create_description">点一下"生成"按钮来生成你的密钥对。期间可能会出现假死，属正常情况。</string>
+    <string name="dialog_create_key_key_public">公钥</string>
+    <string name="dialog_create_key_key_private">私钥</string>
+    <string name="dialog_create_key_button_confirm">添加</string>
+    <string name="dialog_create_key_button_cancel">关闭</string>
+    <string name="dialog_create_key_fail">请填写别名并生成密钥对</string>
+    <string name="dialog_create_key_exists">别名已存在</string>
+    <string name="dialog_create_key_success">添加成功</string>
+
+
+    <!-- menu items -->
+    <string name="menu_add_items">添加</string>
+    <string name="menu_add_key_public">添加公钥</string>
+    <string name="menu_add_key_private">添加私钥</string>
+    <string name="menu_create_key">生成密钥对</string>
+    <string name="menu_help_dialog">帮助</string>
+</resources>

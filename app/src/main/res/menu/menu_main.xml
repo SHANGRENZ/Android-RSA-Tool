@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.hotdoge.rsatool.MainActivity">
+
+    <item
+        android:id="@+id/menu_add_items"
+        android:title="@string/menu_add_items"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/menu_add_key_public"
+                android:title="@string/menu_add_key_public"
+                app:showAsAction="never"
+                />
+            <item
+                android:id="@+id/menu_add_key_private"
+                android:title="@string/menu_add_key_private"
+                app:showAsAction="never"
+                />
+            <item
+                android:id="@+id/menu_create_key"
+                android:title="@string/menu_create_key"
+                app:showAsAction="never"
+                />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_help"
+        android:title="@string/menu_help_dialog"
+        app:showAsAction="never"
+        />
+</menu>
