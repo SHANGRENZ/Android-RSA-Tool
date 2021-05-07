@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -49,6 +50,26 @@ public class DialogAddKeyPrivate {
                             new AlertDialog.Builder(MainActivity.self).setMessage(R.string.dialog_add_key_private_exists).setNegativeButton(R.string.dialog_add_key_private_button_cancel, null).create().show();
                             return;
                         }
+
+                        //verify if private key is usable, then add it.
+                        RSA rsa = new RSA();
+                        if(((CheckBox)view.findViewById(R.id.checkBoxAddPrivateWithPublic)).isChecked()){
+                            String publicKey = rsa.getPublicKeyFromPrivateKey(editText2.getText().toString());
+                            if(publicKey.equals("")){
+                                new AlertDialog.Builder(MainActivity.self).setMessage(R.string.dialog_add_key_private_wrong_key).setNegativeButton(R.string.dialog_add_key_private_button_cancel, null).create().show();
+                                return;
+                            }else {
+                                SQLiteDatabase sqLiteDatabase = new SQLKeyPublicCreate(MainActivity.self).getWritableDatabase();
+                                ContentValues values = new ContentValues();
+                                values.put(SQLiteInfo.TablePublic.Items.NICKNAME, editText1.getText().toString());
+                                values.put(SQLiteInfo.TablePublic.Items.CONTENT, publicKey);
+                                sqLiteDatabase.insert(SQLiteInfo.TablePublic.NAME, null, values);
+                                sqLiteDatabase.close();
+                                MainActivityToDo.updateSpinnerPublic(RSAKeysDataBase.getListPublicNickname());
+                            }
+                        }
+
+                        //add private key
                         SQLiteDatabase sqLiteDatabase = new SQLKeyPrivateCreate(MainActivity.self).getWritableDatabase();
                         ContentValues values = new ContentValues();
                         values.put(SQLiteInfo.TablePrivate.Items.NICKNAME, editText1.getText().toString());

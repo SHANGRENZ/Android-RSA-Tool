@@ -32,6 +32,7 @@
     <string name="dialog_add_key_private_name">别名</string>
     <string name="dialog_add_key_private_key">私钥</string>
     <string name="dialog_add_key_private_with_public">自动添加对应公钥</string>
+    <string name="dialog_add_key_private_wrong_key">生成公钥失败。请检查你输入的私钥</string>
     <string name="dialog_add_key_private_button_confirm">添加</string>
     <string name="dialog_add_key_private_button_cancel">关闭</string>
     <string name="dialog_add_key_private_fail">请填写完整</string>

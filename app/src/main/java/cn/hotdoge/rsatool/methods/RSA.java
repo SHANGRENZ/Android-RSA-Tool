@@ -76,16 +76,22 @@ public class RSA {
     }
 
     static PrivateKey getPrivateKeyObjFromString(String key) {
-        byte[] keyEncoded = Base64.decode(key, Base64.DEFAULT);
-        PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(keyEncoded);
         try {
-            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            byte[] keyEncoded = Base64.decode(key, Base64.DEFAULT);
+
+            PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(keyEncoded);
             try {
-                return keyFactory.generatePrivate(pkcs8EncodedKeySpec);
-            } catch (InvalidKeySpecException e) {
+                KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                try {
+                    return keyFactory.generatePrivate(pkcs8EncodedKeySpec);
+                } catch (InvalidKeySpecException e) {
+                    e.printStackTrace();
+                }
+            } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
-        } catch (NoSuchAlgorithmException e) {
+
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
 
