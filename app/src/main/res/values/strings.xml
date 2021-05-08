@@ -20,6 +20,16 @@
     <string name="dialog_first_run_checkbox">不再显示</string>
     <string name="dialog_first_run_button">好的</string>
 
+    <!-- encrypt and decrypt message -->
+    <string name="encrypt_string_no_public_key">请先添加公钥</string>
+    <string name="encrypt_string_null_result">加密失败</string>
+
+    <string name="decrypt_string_no_private_key">请先添加私钥</string>
+    <string name="decrypt_string_null_result">解密失败</string>
+    
+    <string name="floating_action_button_nothing_to_copy">没有东西可用来复制</string>
+    <string name="floating_action_button_copy_success">复制成功</string>
+
     <!-- add key public dialog-->
     <string name="dialog_add_key_public_title">添加公钥</string>
     <string name="dialog_add_key_public_description">添加他人的公钥</string>

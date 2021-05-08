@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                MainActivityToDo.floatingActionButtonClick(view);
             }
         });
 
@@ -66,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivityToDo.messageDecrypt();
+            }
+        });
+
+        //edittext on focus events
+        this.findViewById(R.id.mainContentEditTextBefore).setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                MainActivityToDo.edittextBeforeOnFocus(v, hasFocus);
             }
         });
     }
