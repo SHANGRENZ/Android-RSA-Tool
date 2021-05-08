@@ -11,7 +11,12 @@
 
     <!-- first run dialog -->
     <string name="dialog_first_run_title">使用说明</string>
-    <string name="dialog_first_run_content">我是使用说明哦</string>
+    <string name="dialog_first_run_content">
+        欢迎使用RSA TOOL! 本工具可使用非对称加密方式加密文本。
+        \n\n如果您是第一次使用该工具，请点击右上角的添加->生成密钥对生成你的公钥与私钥。其中私钥将由你自己保留，公钥则可随意分发。
+        \n\n要想给某人发送加密消息，请先索要并添加他的公钥。然后使用他的公钥加密文本即可。
+        \n\n要想别人发送给你加密消息，你需要将你的公钥分发给他们。被你的公钥加密过的消息只能用你的私钥解开。
+    </string>
     <string name="dialog_first_run_checkbox">不再显示</string>
     <string name="dialog_first_run_button">好的</string>
 
