@@ -1,6 +1,7 @@
 package cn.hotdoge.rsatool.methods;
 
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.nio.charset.MalformedInputException;
@@ -27,5 +28,25 @@ public class MainActivityToDo {
         Spinner spinner = MainActivity.self.findViewById(R.id.spinnerKeyListPrivate);
         spinner.setAdapter(arrayAdapter);
 
+    }
+
+    public static void messageEncrypt() {
+        Spinner spinner = MainActivity.self.findViewById(R.id.spinnerKeyListPublic);
+        EditText editTextBefore = MainActivity.self.findViewById(R.id.mainContentEditTextBefore);
+        EditText editTextAfter = MainActivity.self.findViewById(R.id.mainContentEditTextAfter);
+
+        RSA rsa = new RSA();
+        String result = rsa.getEncryptedStringFromPublicKey(editTextBefore.getText().toString(), RSAKeysDataBase.getPublicKeyFromDatabase(spinner.getSelectedItem().toString()));
+        editTextAfter.setText(result == null ? "null" : result);
+    }
+
+    public static void messageDecrypt() {
+        Spinner spinner = MainActivity.self.findViewById(R.id.spinnerKeyListPrivate);
+        EditText editTextBefore = MainActivity.self.findViewById(R.id.mainContentEditTextBefore);
+        EditText editTextAfter = MainActivity.self.findViewById(R.id.mainContentEditTextAfter);
+
+        RSA rsa = new RSA();
+        String result = rsa.getDecryptedStringFromPrivateKey(editTextBefore.getText().toString(), RSAKeysDataBase.getPrivateKeyFromDatabase(spinner.getSelectedItem().toString()));
+        editTextAfter.setText(result == null ? "null" : result);
     }
 }

@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -15,11 +16,15 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.RSAPrivateCrtKeySpec;
 import java.security.spec.RSAPrivateKeySpec;
 import java.security.spec.RSAPublicKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 
+import javax.crypto.Cipher;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
 public class RSA {
@@ -96,5 +101,71 @@ public class RSA {
         }
 
         return null;
+    }
+
+    static PublicKey getPublicKeyObjFromString(String key) {
+        try {
+            byte[] keyEncoded = Base64.decode(key, Base64.DEFAULT);
+
+            X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(keyEncoded);
+            try {
+                KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                try {
+                    return keyFactory.generatePublic(x509EncodedKeySpec);
+                } catch (InvalidKeySpecException e) {
+                    e.printStackTrace();
+                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String getEncryptedStringFromPublicKey(String string, String key) {
+        String encryptedBase64 = "";
+        if (string.equals(""))
+            return encryptedBase64;
+
+        PublicKey publicKey = getPublicKeyObjFromString(key);
+        if (publicKey == null)
+            return null;
+
+        try {
+            final Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING");
+            cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+             byte[] encryptedBytes = cipher.doFinal(string.getBytes("UTF-8"));
+             encryptedBase64 = new String(Base64.encode(encryptedBytes, Base64.DEFAULT));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return encryptedBase64.replaceAll("(\\\\r|\\\\n)", "");
+    }
+
+    public String getDecryptedStringFromPrivateKey(String string, String key) {
+        String decryptedString = "";
+        if (string.equals(""))
+            return decryptedString;
+
+        PrivateKey privateKey = getPrivateKeyObjFromString(key);
+        if (privateKey == null)
+            return null;
+
+        try {
+            final Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING");
+            cipher.init(Cipher.DECRYPT_MODE, privateKey);
+
+            byte[] encryptedBytes = Base64.decode(string, Base64.DEFAULT);
+            byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+            decryptedString = new String(decryptedBytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return decryptedString;
     }
 }

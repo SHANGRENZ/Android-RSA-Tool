@@ -59,4 +59,18 @@ public class RSAKeysDataBase {
 
         return alreadyExists;
     }
+
+    public static String getPublicKeyFromDatabase(String nickname) {
+        SQLiteDatabase sqLiteDatabase = new SQLKeyPublicCreate(MainActivity.self).getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.query(SQLiteInfo.TablePublic.NAME, null, SQLiteInfo.TablePublic.Items.NICKNAME+"=?", new String[]{nickname}, null, null, null);
+        cursor.moveToFirst();
+        return cursor.getString(cursor.getColumnIndex(SQLiteInfo.TablePublic.Items.CONTENT));
+    }
+
+    public static String getPrivateKeyFromDatabase(String nickname) {
+        SQLiteDatabase sqLiteDatabase = new SQLKeyPrivateCreate(MainActivity.self).getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.query(SQLiteInfo.TablePrivate.NAME, null, SQLiteInfo.TablePrivate.Items.NICKNAME+"=?", new String[]{nickname}, null, null, null);
+        cursor.moveToFirst();
+        return cursor.getString(cursor.getColumnIndex(SQLiteInfo.TablePrivate.Items.CONTENT));
+    }
 }

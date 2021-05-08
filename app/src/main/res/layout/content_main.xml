@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_main">
 
     <EditText
-        android:id="@+id/mainContentEditText1"
+        android:id="@+id/mainContentEditTextBefore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -93,20 +93,20 @@
         android:layout_marginLeft="12dp"
         android:text="@string/main_button_encrypt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainContentEditText1" />
+        app:layout_constraintTop_toBottomOf="@+id/mainContentEditTextBefore" />
 
     <Button
-        android:id="@+id/mainContentButton2"
+        android:id="@+id/mainContentButtonDecrypt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:text="@string/main_button_decrypt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainContentEditText1" />
+        app:layout_constraintTop_toBottomOf="@+id/mainContentEditTextBefore" />
 
     <EditText
-        android:id="@+id/mainContentEditText2"
+        android:id="@+id/mainContentEditTextAfter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"

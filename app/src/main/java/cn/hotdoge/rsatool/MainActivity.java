@@ -1,5 +1,6 @@
 package cn.hotdoge.rsatool;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,7 +8,6 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 
 import java.util.logging.Logger;
 
@@ -53,6 +54,20 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivityToDo.updateSpinnerPublic(RSAKeysDataBase.getListPublicNickname());
         MainActivityToDo.updateSpinnerPrivate(RSAKeysDataBase.getListPrivateNickname());
+
+        //onclick events
+        this.findViewById(R.id.mainContentButtonEncrypt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivityToDo.messageEncrypt();
+            }
+        });
+        this.findViewById(R.id.mainContentButtonDecrypt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivityToDo.messageDecrypt();
+            }
+        });
     }
 
     @Override
