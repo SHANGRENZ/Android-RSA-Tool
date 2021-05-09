@@ -1,16 +1,16 @@
-package cn.hotdoge.rsatool.overrides;
+package com.zhoushangren.rsatool.overrides;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import cn.hotdoge.rsatool.vars.SQLiteInfo;
+import com.zhoushangren.rsatool.vars.SQLiteInfo;
 
-public class SQLKeyPrivateCreate extends SQLiteOpenHelper {
+public class SQLKeyPublicCreate extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = SQLiteInfo.DataBase.NAME;
 
-    public SQLKeyPrivateCreate(Context context){
+    public SQLKeyPublicCreate(Context context){
         super(context, DATABASE_NAME, null, VERSION);
     }
 
@@ -22,10 +22,10 @@ public class SQLKeyPrivateCreate extends SQLiteOpenHelper {
     @Override
     public void onOpen(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table if not exists " +
-                SQLiteInfo.TablePrivate.NAME +
+                SQLiteInfo.TablePublic.NAME +
                 " (Id integer primary key autoincrement, " +
-                SQLiteInfo.TablePrivate.Items.NICKNAME + ", " +
-                SQLiteInfo.TablePrivate.Items.CONTENT + ")");
+                SQLiteInfo.TablePublic.Items.NICKNAME + ", " +
+                SQLiteInfo.TablePublic.Items.CONTENT + ")");
     }
 
     @Override

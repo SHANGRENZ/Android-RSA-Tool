@@ -45,8 +45,8 @@
     <TextView
         android:id="@+id/textView8"
         style="@style/DialogTheme"
-        android:layout_width="29dp"
         android:layout_height="23dp"
+        android:layout_width="wrap_content"
         android:text="@string/dialog_add_key_public_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />

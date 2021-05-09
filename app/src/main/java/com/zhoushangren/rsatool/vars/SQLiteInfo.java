@@ -1,4 +1,4 @@
-package cn.hotdoge.rsatool.vars;
+package com.zhoushangren.rsatool.vars;
 
 public class SQLiteInfo {
     public static final class DataBase {

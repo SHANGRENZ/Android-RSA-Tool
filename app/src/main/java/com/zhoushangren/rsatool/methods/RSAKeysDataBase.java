@@ -1,15 +1,14 @@
-package cn.hotdoge.rsatool.methods;
+package com.zhoushangren.rsatool.methods;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.util.ArrayList;
 
-import cn.hotdoge.rsatool.MainActivity;
-import cn.hotdoge.rsatool.overrides.SQLKeyPrivateCreate;
-import cn.hotdoge.rsatool.overrides.SQLKeyPublicCreate;
-import cn.hotdoge.rsatool.vars.SQLiteInfo;
+import com.zhoushangren.rsatool.MainActivity;
+import com.zhoushangren.rsatool.overrides.SQLKeyPrivateCreate;
+import com.zhoushangren.rsatool.overrides.SQLKeyPublicCreate;
+import com.zhoushangren.rsatool.vars.SQLiteInfo;
 
 public class RSAKeysDataBase {
     public static ArrayList<String> getListPublicNickname() {

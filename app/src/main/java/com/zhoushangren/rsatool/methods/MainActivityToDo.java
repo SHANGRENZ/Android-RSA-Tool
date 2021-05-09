@@ -1,4 +1,4 @@
-package cn.hotdoge.rsatool.methods;
+package com.zhoushangren.rsatool.methods;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -11,11 +11,10 @@ import android.widget.Spinner;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 
-import cn.hotdoge.rsatool.MainActivity;
-import cn.hotdoge.rsatool.R;
+import com.zhoushangren.rsatool.MainActivity;
+import com.zhoushangren.rsatool.R;
 
 public class MainActivityToDo {
 

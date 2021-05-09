@@ -1,4 +1,4 @@
-package cn.hotdoge.rsatool.methods;
+package com.zhoushangren.rsatool.methods;
 
 import android.app.AlertDialog;
 import android.content.ContentValues;
@@ -10,10 +10,10 @@ import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import cn.hotdoge.rsatool.MainActivity;
-import cn.hotdoge.rsatool.R;
-import cn.hotdoge.rsatool.overrides.SQLKeyPublicCreate;
-import cn.hotdoge.rsatool.vars.SQLiteInfo;
+import com.zhoushangren.rsatool.MainActivity;
+import com.zhoushangren.rsatool.R;
+import com.zhoushangren.rsatool.overrides.SQLKeyPublicCreate;
+import com.zhoushangren.rsatool.vars.SQLiteInfo;
 
 public class DialogAddKeyPublic {
     public static void getDialog() {

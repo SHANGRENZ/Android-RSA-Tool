@@ -2,77 +2,77 @@
     <string name="app_name">RSA Tool</string>
     <string name="action_settings">Settings</string>
     
-    <string name="main_title_selector_public">公钥</string>
-    <string name="main_title_selector_private">私钥</string>
-    <string name="main_title_input_text_source">待加密/解密的文本</string>
-    <string name="main_button_encrypt">加密</string>
-    <string name="main_button_decrypt">解密</string>
-    <string name="main_title_input_text_target">加密/解密后的文本</string>
+    <string name="main_title_selector_public">Public key</string>
+    <string name="main_title_selector_private">Private key</string>
+    <string name="main_title_input_text_source">Content before encryption/decryption</string>
+    <string name="main_button_encrypt">Encrypt</string>
+    <string name="main_button_decrypt">Decrypt</string>
+    <string name="main_title_input_text_target">Content after encryption/decryption</string>
 
     <!-- first run dialog -->
-    <string name="dialog_first_run_title">使用说明</string>
+    <string name="dialog_first_run_title">Instruction</string>
     <string name="dialog_first_run_content">
-        欢迎使用RSA TOOL! 本工具可使用非对称加密方式加密文本。
-        \n\n如果您是第一次使用该工具，请点击右上角的添加->生成密钥对生成你的公钥与私钥。其中私钥将由你自己保留，公钥则可随意分发。
-        \n\n要想给某人发送加密消息，请先索要并添加他的公钥。然后使用他的公钥加密文本即可。
-        \n\n要想别人发送给你加密消息，你需要将你的公钥分发给他们。被你的公钥加密过的消息只能用你的私钥解开。
+        Thanks for using RSA TOOL! Using this tool you can encrypt content by RSA.
+        \n\nIf you are using this tool first time, please click menu->Add->Generate key pair to generate your public and private key. You will own your private key, and the public key can be sent to others.
+        \n\nTo send encrypted message to someone, you need to add their public key first. Then use their public key encrypt message.
+        \n\nTo receive encrypted message from others, you need to give your public key to someone who will send you. The message encrypted by your public key can only be decrypted using your private key.
     </string>
-    <string name="dialog_first_run_checkbox">不再显示</string>
-    <string name="dialog_first_run_button">好的</string>
+    <string name="dialog_first_run_checkbox">Don\'t show this again</string>
+    <string name="dialog_first_run_button">Got it</string>
 
     <!-- encrypt and decrypt message -->
-    <string name="encrypt_string_no_public_key">请先添加公钥</string>
-    <string name="encrypt_string_null_result">加密失败</string>
+    <string name="encrypt_string_no_public_key">Please add public key first</string>
+    <string name="encrypt_string_null_result">Failed to encrypt</string>
 
-    <string name="decrypt_string_no_private_key">请先添加私钥</string>
-    <string name="decrypt_string_null_result">解密失败</string>
+    <string name="decrypt_string_no_private_key">Please add private key first</string>
+    <string name="decrypt_string_null_result">Failed to decrypt</string>
     
-    <string name="floating_action_button_nothing_to_copy">没有东西可用来复制</string>
-    <string name="floating_action_button_copy_success">复制成功</string>
+    <string name="floating_action_button_nothing_to_copy">Nothing can be used to copy</string>
+    <string name="floating_action_button_copy_success">Successfully copied</string>
 
     <!-- add key public dialog-->
-    <string name="dialog_add_key_public_title">添加公钥</string>
-    <string name="dialog_add_key_public_description">添加他人的公钥</string>
-    <string name="dialog_add_key_public_name">别名</string>
-    <string name="dialog_add_key_public_key">公钥</string>
-    <string name="dialog_add_key_public_button_confirm">添加</string>
-    <string name="dialog_add_key_public_button_cancel">关闭</string>
-    <string name="dialog_add_key_public_fail">请填写完整</string>
-    <string name="dialog_add_key_public_exists">别名已存在</string>
-    <string name="dialog_add_key_public_success">添加成功</string>
+    <string name="dialog_add_key_public_title">Add public key</string>
+    <string name="dialog_add_key_public_description">Add someone\'s public key</string>
+    <string name="dialog_add_key_public_name">Nickname</string>
+    <string name="dialog_add_key_public_key">Public key</string>
+    <string name="dialog_add_key_public_button_confirm">Add</string>
+    <string name="dialog_add_key_public_button_cancel">Close</string>
+    <string name="dialog_add_key_public_fail">Please fill all the blanks</string>
+    <string name="dialog_add_key_public_exists">Nickname already exists</string>
+    <string name="dialog_add_key_public_success">Successfully add</string>
 
     <!-- add key private dialog-->
-    <string name="dialog_add_key_private_title">添加私钥</string>
-    <string name="dialog_add_key_private_description">添加自己的私钥</string>
-    <string name="dialog_add_key_private_name">别名</string>
-    <string name="dialog_add_key_private_key">私钥</string>
-    <string name="dialog_add_key_private_with_public">自动添加对应公钥</string>
-    <string name="dialog_add_key_private_wrong_key">生成公钥失败。请检查你输入的私钥</string>
-    <string name="dialog_add_key_private_button_confirm">添加</string>
-    <string name="dialog_add_key_private_button_cancel">关闭</string>
-    <string name="dialog_add_key_private_fail">请填写完整</string>
-    <string name="dialog_add_key_private_exists">别名已存在</string>
-    <string name="dialog_add_key_private_success">添加成功</string>
+    <string name="dialog_add_key_private_title">Add private key</string>
+    <string name="dialog_add_key_private_description">Add your private key</string>
+    <string name="dialog_add_key_private_name">Nickname</string>
+    <string name="dialog_add_key_private_key">Private key</string>
+    <string name="dialog_add_key_private_with_public">Generate private key\'s public key and add it</string>
+    <string name="dialog_add_key_private_wrong_key">Failed to generate public key. Please check your private key</string>
+    <string name="dialog_add_key_private_button_confirm">Add</string>
+    <string name="dialog_add_key_private_button_cancel">Close</string>
+    <string name="dialog_add_key_private_fail">Please fill all the blanks</string>
+    <string name="dialog_add_key_private_exists">Nickname already exists</string>
+    <string name="dialog_add_key_private_success">Successfully add</string>
 
     <!-- create key dialog -->
-    <string name="dialog_create_key_title">创建密钥对</string>
-    <string name="dialog_create_key_description">生成新的密钥对</string>
-    <string name="dialog_create_key_name">别名</string>
-    <string name="dialog_create_key_button_create">生成</string>
-    <string name="dialog_create_key_button_create_description">点一下"生成"按钮来生成你的密钥对。期间可能会出现假死，属正常情况。</string>
-    <string name="dialog_create_key_key_public">公钥</string>
-    <string name="dialog_create_key_key_private">私钥</string>
-    <string name="dialog_create_key_button_confirm">添加</string>
-    <string name="dialog_create_key_button_cancel">关闭</string>
-    <string name="dialog_create_key_fail">请填写别名并生成密钥对</string>
-    <string name="dialog_create_key_exists">别名已存在</string>
-    <string name="dialog_create_key_success">添加成功</string>
+    <string name="dialog_create_key_title">Generate key pair</string>
+    <string name="dialog_create_key_description">Generate a new key pair</string>
+    <string name="dialog_create_key_name">Nickname</string>
+    <string name="dialog_create_key_button_create">Generate</string>
+    <string name="dialog_create_key_button_create_description">Click generate button to generate your key pair.</string>
+    <string name="dialog_create_key_key_public">Public key</string>
+    <string name="dialog_create_key_key_private">Private key</string>
+    <string name="dialog_create_key_button_confirm">Add</string>
+    <string name="dialog_create_key_button_cancel">Close</string>
+    <string name="dialog_create_key_fail">Please fill the nickname and generate the key pair</string>
+    <string name="dialog_create_key_exists">Nickname already exists</string>
+    <string name="dialog_create_key_success">Successfully add</string>
 
 
     <!-- menu items -->
-    <string name="menu_add_items">添加</string>
-    <string name="menu_add_key_public">添加公钥</string>
-    <string name="menu_add_key_private">添加私钥</string>
-    <string name="menu_create_key">生成密钥对</string>
-    <string name="menu_help_dialog">帮助</string>
+    <string name="menu_add_items">Add</string>
+    <string name="menu_add_key_public">Add public key</string>
+    <string name="menu_add_key_private">Add private key</string>
+    <string name="menu_create_key">Generate key pair</string>
+    <string name="menu_help_dialog">Help</string>
 </resources>

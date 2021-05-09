@@ -1,4 +1,4 @@
-package cn.hotdoge.rsatool.methods;
+package com.zhoushangren.rsatool.methods;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -8,8 +8,8 @@ import android.widget.CheckBox;
 
 import androidx.appcompat.app.AlertDialog;
 
-import cn.hotdoge.rsatool.MainActivity;
-import cn.hotdoge.rsatool.R;
+import com.zhoushangren.rsatool.MainActivity;
+import com.zhoushangren.rsatool.R;
 
 public class DialogFirstRun {
     public static void getDialog() {
